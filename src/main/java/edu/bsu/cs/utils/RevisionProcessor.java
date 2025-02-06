@@ -9,7 +9,7 @@ public class RevisionProcessor {
     public List<Revision> processRevisions(List<String> users, List<String> timestamps, List<String> redirects, List<String> missingPages) {
         List<Revision> revisionList = new ArrayList<>();
 
-        // Handle redirects
+        // Handle redirection
         if (!redirects.isEmpty()) {
             revisionList.add(new Revision("Redirected to: " + redirects.get(0), "N/A"));
         }
