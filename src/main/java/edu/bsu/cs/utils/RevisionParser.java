@@ -1,7 +1,6 @@
 package edu.bsu.cs.utils;
 
 import com.jayway.jsonpath.JsonPath;
-import edu.bsu.cs.model.RevisionProcessor;
 import edu.bsu.cs.model.Revision;
 
 import java.io.IOException;
@@ -18,17 +17,25 @@ public class RevisionParser {
         this.revisionProcessor = new RevisionProcessor();
     }
 
-//    public List<Revision> parseFirstUser() throws IOException {
-//        String jsonResponse = new String(Files.readAllBytes(Paths.get(jsonFilePath)));
-//        List<String> users = JsonPath.read(jsonResponse, "$..revisions[*].user");
-////        List<String> users = JsonPath.read(jsonResponse, "$..revisions[*].user");
-//        List<String> timestamps = JsonPath.read(jsonResponse, "$..revisions[*].timestamp");
-//        List<String> to = JsonPath.read(jsonResponse, "$..redirects[*].to");
-//        List<String> missing = JsonPath.read(jsonResponse, "$..missing");
-//        List<Revision> revisionList = new ArrayList<>();
-//        revisionList.add(new Revision())
-//        return users.isEmpty() ? null : users.get(0);
-//    }
+    private String readJsonFile() throws IOException {
+        return new String(Files.readAllBytes(Paths.get(jsonFilePath)));
+    }
+
+    public List<String> extractUsers() throws IOException {
+        return JsonPath.read(readJsonFile(), "$..revisions[*].user");
+    }
+
+    public List<String> extractTimestamps() throws IOException {
+        return JsonPath.read(readJsonFile(), "$..revisions[*].timestamp");
+    }
+
+    public List<String> extractRedirects() throws IOException {
+        return JsonPath.read(readJsonFile(), "$..redirects[*].to");
+    }
+
+    public List<String> extractMissingPages() throws IOException {
+        return JsonPath.read(readJsonFile(), "$..missing");
+    }
 
     public List<Revision> parseRevisions() throws IOException {
         String jsonResponse = new String(Files.readAllBytes(Paths.get(jsonFilePath)));

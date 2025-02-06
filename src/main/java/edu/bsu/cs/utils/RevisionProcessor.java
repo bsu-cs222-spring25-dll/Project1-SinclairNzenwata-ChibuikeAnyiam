@@ -1,4 +1,4 @@
-package edu.bsu.cs.model;
+package edu.bsu.cs.utils;
 
 import edu.bsu.cs.model.Revision;
 

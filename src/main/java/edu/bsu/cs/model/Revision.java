@@ -16,4 +16,9 @@ public class Revision {
     public String getTimestamp() {
         return timestamp;
     }
+
+    @Override
+    public String toString() {
+        return timestamp + "  " + user;
+    }
 }
