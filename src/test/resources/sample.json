@@ -1,0 +1,45 @@
+{
+  "continue": {
+    "rvcontinue": "20241022101530|1252651032",
+    "continue": "||"
+  },
+  "query": {
+    "normalized": [
+      {
+        "from": "general",
+        "to": "General"
+      }
+    ],
+    "redirects": [
+      {
+        "from": "General",
+        "to": "General officer"
+      }
+    ],
+    "pages": {
+      "148537": {
+        "pageid": 148537,
+        "ns": 0,
+        "title": "General officer",
+        "revisions": [
+          {
+            "user": "GreenC bot",
+            "timestamp": "2025-01-30T02:39:05Z"
+          },
+          {
+            "user": "Skjoldbro",
+            "timestamp": "2025-01-12T11:36:41Z"
+          },
+          {
+            "user": "WikiCleanerBot",
+            "timestamp": "2024-10-28T08:31:58Z"
+          },
+          {
+            "user": "BarntToust",
+            "timestamp": "2024-10-24T13:10:57Z"
+          }
+        ]
+      }
+    }
+  }
+}
