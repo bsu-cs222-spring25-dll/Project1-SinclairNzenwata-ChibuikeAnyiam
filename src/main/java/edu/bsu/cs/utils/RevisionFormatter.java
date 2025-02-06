@@ -1,4 +1,6 @@
-package edu.bsu.cs;
+package edu.bsu.cs.utils;
+
+import edu.bsu.cs.model.Revision;
 
 public class RevisionFormatter {
     public static String format(Revision revision, int counter) {

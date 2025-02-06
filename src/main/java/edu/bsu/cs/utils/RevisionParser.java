@@ -1,10 +1,12 @@
-package edu.bsu.cs;
+package edu.bsu.cs.utils;
 
 import com.jayway.jsonpath.JsonPath;
+import edu.bsu.cs.RevisionProcessor;
+import edu.bsu.cs.model.Revision;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.List;
 
 public class RevisionParser {
