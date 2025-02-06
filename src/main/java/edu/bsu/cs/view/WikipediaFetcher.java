@@ -1,4 +1,4 @@
-package edu.bsu.cs;
+package edu.bsu.cs.view;
 
 import edu.bsu.cs.model.Revision;
 import edu.bsu.cs.utils.RevisionParser;
