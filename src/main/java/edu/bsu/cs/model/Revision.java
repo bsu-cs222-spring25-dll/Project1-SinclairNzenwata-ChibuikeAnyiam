@@ -4,21 +4,23 @@ public class Revision {
     private final String user;
     private final String timestamp;
 
-    public Revision(String user, String timestamp) {
+    private final  String other;
+
+    public Revision(String user, String timestamp, String other) {
         this.user = user;
         this.timestamp = timestamp;
+        this.other = other;
     }
 
     public String getUser() {
         return user;
     }
 
-    public String getTimestamp() {
-        return timestamp;
+    public String getOther() {
+        return other;
     }
 
-    @Override
-    public String toString() {
-        return timestamp + "  " + user;
+    public String getTimestamp() {
+        return timestamp;
     }
 }

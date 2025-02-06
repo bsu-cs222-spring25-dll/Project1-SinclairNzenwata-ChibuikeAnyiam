@@ -1,16 +1,16 @@
 package edu.bsu.cs.controller;
 
 import edu.bsu.cs.model.Revision;
-import edu.bsu.cs.routes.RevisionAPI;
+import edu.bsu.cs.service.RevisionService;
 import edu.bsu.cs.view.WikipediaMenu;
 import java.io.IOException;
 import java.util.List;
 
 public class WikipediaController {
-    private final RevisionAPI service;
+    private final RevisionService service;
     private final WikipediaMenu view;
 
-    public WikipediaController(RevisionAPI service, WikipediaMenu view) {
+    public WikipediaController(RevisionService service, WikipediaMenu view) {
         this.service = service;
         this.view = view;
     }
