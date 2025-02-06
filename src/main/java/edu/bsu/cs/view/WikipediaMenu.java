@@ -7,16 +7,6 @@ import java.util.Scanner;
 
 public class WikipediaMenu {
     private final Scanner scanner = new Scanner(System.in);
-
-    public void displayMenu() {
-
-
-        System.out.println("*".repeat(15) + " Welcome to Wikisearch " + "*".repeat(15));
-        System.out.println("\nPut in the article's name: ");
-        String articleName = scanner.nextLine();
-
-
-    }
     public String getArticleName() {
         System.out.println("*".repeat(15) + " Welcome to Wiki search " + "*".repeat(15));
         System.out.println("\nPut in the article's name: ");
