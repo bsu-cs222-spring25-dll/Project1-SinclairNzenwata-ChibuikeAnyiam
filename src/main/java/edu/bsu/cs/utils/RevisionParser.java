@@ -1,7 +1,7 @@
 package edu.bsu.cs.utils;
 
 import com.jayway.jsonpath.JsonPath;
-import edu.bsu.cs.RevisionProcessor;
+import edu.bsu.cs.model.RevisionProcessor;
 import edu.bsu.cs.model.Revision;
 
 import java.io.IOException;
