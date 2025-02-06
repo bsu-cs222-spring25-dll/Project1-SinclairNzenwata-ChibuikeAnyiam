@@ -1,5 +1,8 @@
 package edu.bsu.cs;
 
+import edu.bsu.cs.model.Revision;
+import edu.bsu.cs.utils.RevisionParser;
+
 import java.io.IOException;
 import java.util.List;
 

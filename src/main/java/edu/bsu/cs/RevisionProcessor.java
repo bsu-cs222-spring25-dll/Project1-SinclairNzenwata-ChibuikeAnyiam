@@ -1,5 +1,7 @@
 package edu.bsu.cs;
 
+import edu.bsu.cs.model.Revision;
+
 import java.util.ArrayList;
 import java.util.List;
 
