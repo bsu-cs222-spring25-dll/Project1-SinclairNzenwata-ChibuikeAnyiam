@@ -15,12 +15,12 @@ public class RevisionService {
         this.builder = builder;
     }
 
-    public List<Revision> getRevisions(String article) throws IOException {
+    public List<Revision> getRevisions(String jsonData) throws IOException {
         return builder.buildRevisions(
-                parser.extractUsers(),
-                parser.extractTimestamps(),
-                parser.extractRedirects(),
-                parser.extractMissingPages()
+                parser.extractUsers(jsonData),
+                parser.extractTimestamps(jsonData),
+                parser.extractRedirects(jsonData),
+                parser.extractMissingPages(jsonData)
         );
     }
 }

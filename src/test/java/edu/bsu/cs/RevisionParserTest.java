@@ -1,39 +1,38 @@
 package edu.bsu.cs;
-
-import com.jayway.jsonpath.JsonPath;
 import edu.bsu.cs.utils.RevisionParser;
 import org.junit.jupiter.api.Test;
-
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RevisionParserTest {
-    RevisionParser revisionParser = new RevisionParser("src/test/resources/sample.json");
+    RevisionParser revisionParser = new RevisionParser();
+    private final String jsonData =  new String(Files.readAllBytes(Paths.get("src/test/resources/sample.json")));
+    public RevisionParserTest() throws IOException {
+    }
     @Test
-    public void ExtractFirstUserTest() throws IOException {
-        List<String> users = revisionParser.extractUsers();
+    public void ExtractFirstUserTest() {
+        List<String> users = revisionParser.extractUsers(jsonData);
         assertFalse(users.isEmpty());
         System.out.println("First editor: " + users.get(0));
         assertNotNull(users.get(0));
     }
     @Test
-    void ExtractTimestampsFromJsonTest() throws IOException {
-        List<String> timestamps = revisionParser.extractTimestamps();
+    void ExtractTimestampsFromJsonTest() {
+        List<String> timestamps = revisionParser.extractTimestamps(jsonData);
         assertEquals("2025-01-30T02:39:05Z", timestamps.get(0));
     }
     @Test
-    void RedirectedArticleTest() throws IOException {
-        List<String> redirects = revisionParser.extractRedirects();
+    void RedirectedArticleTest() {
+        List<String> redirects = revisionParser.extractRedirects(jsonData);
         assertFalse(redirects.isEmpty());
     }
     @Test
-    void MissingPageTest() throws IOException {
-        List<String> missing = revisionParser.extractMissingPages();
+    void MissingPageTest() {
+        List<String> missing = revisionParser.extractMissingPages(jsonData);
         assertTrue(missing.isEmpty());
     }
-
-
 }

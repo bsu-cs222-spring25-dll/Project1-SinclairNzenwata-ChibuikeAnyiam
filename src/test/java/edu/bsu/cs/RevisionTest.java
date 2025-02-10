@@ -11,13 +11,11 @@ class RevisionTest {
         assertEquals("Sinclair Stark", revision.getUser());
         assertEquals("2024-02-02T14:30:00Z", revision.getTimestamp());
     }
-
     @Test
     public void redirectConstructorTest() {
         Revision revision = new Revision("RedirectPage");
         assertEquals("RedirectPage", revision.getRedirectText());
     }
-
     @Test
     public void missingPageConstructorTest() {
         Revision revision = new Revision(true);
