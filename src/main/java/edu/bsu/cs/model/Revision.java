@@ -1,10 +1,7 @@
 package edu.bsu.cs.model;
 
 public class Revision {
-    private final String user;
-    private final String timestamp;
-
-    private final  String redirectText;
+    private final String user, timestamp, redirectText;
     private final boolean isMissing;
 
     public Revision(String user, String timestamp, String redirectText, boolean isMissing) {
