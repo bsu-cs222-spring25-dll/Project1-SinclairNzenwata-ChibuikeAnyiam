@@ -11,19 +11,19 @@ public class RevisionProcessor {
 
         // Handle redirection
         if (!redirects.isEmpty()) {
-            revisionList.add(new Revision("", "", "Redirected to: " + redirects.get(0)));
+            revisionList.add(new Revision("Redirected to: " + redirects.get(0)));
         }
 
         // Handle missing pages
         if (!missingPages.isEmpty()) {
-            revisionList.add(new Revision("", "","Error: Page does not exist" ));
+            revisionList.add(new Revision(false));
         }
 
-        // Add all revisions to the list
+        // all revisions
         for (int i = 0; i < users.size(); i++) {
             String user = users.get(i);
             String timestamp = timestamps.get(i);
-            revisionList.add(new Revision(user, timestamp, ""));
+            revisionList.add(new Revision(user, timestamp));
         }
 
         return revisionList;
