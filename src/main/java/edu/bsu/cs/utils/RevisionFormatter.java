@@ -4,9 +4,10 @@ import edu.bsu.cs.model.Revision;
 
 public class RevisionFormatter {
     public static String format(Revision revision, int counter) {
-        if (revision.getOther() != null && !revision.getOther().isEmpty()) {
-            return revision.getOther();
+        if (revision.getRedirectText() != null) {
+            return revision.getRedirectText();
         }
+//        if
         return counter + "  " + revision.getTimestamp() + "  " + revision.getUser();
     }
 }
