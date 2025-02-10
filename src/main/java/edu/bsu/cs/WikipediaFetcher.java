@@ -9,12 +9,12 @@ import edu.bsu.cs.view.WikipediaMenu;
 
 public class WikipediaFetcher {
     public static void main(String[] args) {
-        WikipediaMenu view = new WikipediaMenu();
+        WikipediaMenu menu = new WikipediaMenu();
         WikipediaApiService apiService = new WikipediaApiService();
         RevisionParser parser = new RevisionParser();
         RevisionBuilder builder = new RevisionBuilder();
         RevisionService service = new RevisionService(parser, builder);
-        WikipediaController controller = new WikipediaController(service, view, apiService);
+        WikipediaController controller = new WikipediaController(service, menu, apiService);
 
         controller.fetchAndDisplayRevisions();
     }

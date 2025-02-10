@@ -9,23 +9,23 @@ import java.util.List;
 
 public class WikipediaController {
     private final RevisionService service;
-    private final WikipediaMenu view;
+    private final WikipediaMenu menu;
     private final WikipediaApiService apiService;
 
     public WikipediaController(RevisionService service, WikipediaMenu view, WikipediaApiService apiService) {
         this.service = service;
-        this.view = view;
+        this.menu = view;
         this.apiService = apiService;
     }
 
     public void fetchAndDisplayRevisions() {
-        String article = view.getArticleName();
+        String article = menu.getArticleName();
         try {
             String jsonData = apiService.fetchWikipediaData(article);
             List<Revision> revisions = service.getRevisions(jsonData);
-            view.displayRevisions(revisions);
+            menu.displayRevisions(revisions);
         } catch (IOException | InterruptedException e) {
-            view.displayError("Failed to retrieve revisions." + e.getMessage());
+            menu.displayError("Failed to retrieve revisions." + e.getMessage());
         }
     }
 }
