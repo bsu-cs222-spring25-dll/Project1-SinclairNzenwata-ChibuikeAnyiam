@@ -91,9 +91,9 @@ To execute JUnit tests: go inside IntelliJ, go to the test folder → Right-clic
 ## Error Handling
 | Scenario                  | Message                                 |
 |---------------------------|-----------------------------------------|
-| No Internet Connection     | Error: Unable to connect to Wikipedia API. |
+| No Internet Connection     | Error: Failed to retrieve revisions. Try turning on your wifi or mobile data. |
 | Invalid Wikipedia Page     | Error: Page does not exist              |
-| API Error (HTTP 500, 404, etc.) | Error: Wikipedia API returned status 500 |
+| API Error (HTTP 500, 404, etc.) | Error: Wikipedia API returned HTTP status 500 |
 | Empty Input    | Error: No article name provided.  |
 
 
