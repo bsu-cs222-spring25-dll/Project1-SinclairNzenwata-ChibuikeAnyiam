@@ -22,8 +22,7 @@ public class WikipediaApiService {
                 .build();
         HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
         if (response.statusCode() != 200) {
-            System.err.println("Error: Unable to connect to Wikipedia API error");
-            throw new IOException("Wikipedia API error: Received HTTP status " + response.statusCode());
+            throw new IOException("Error: Wikipedia API returned HTTP status " + response.statusCode());
         }
         return response.body();
     }

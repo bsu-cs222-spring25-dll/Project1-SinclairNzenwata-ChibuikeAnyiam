@@ -21,22 +21,22 @@ class SampleJsonTest {
         assertNotNull(users.get(0));
     }
     @Test
-    void ExtractTimestampsFromJsonTest() {
+    public void ExtractTimestampsFromJsonTest() {
         List<String> timestamps = JsonPath.read(jsonResponse, "$..revisions[*].timestamp");
         assertEquals("2025-01-30T02:39:05Z", timestamps.get(0));
     }
     @Test
-    void RedirectedArticleTest() {
+    public void RedirectedArticleTest() {
         List<String> redirects = JsonPath.read(jsonResponse, "$..redirects[*].to");
         assertFalse(redirects.isEmpty());
     }
     @Test
-    void MissingPageTest() {
+    public void MissingPageTest() {
         List<String> missing = JsonPath.read(jsonResponse, "$..missing");
         assertTrue(missing.isEmpty());
     }
     @Test
-    void RevisionsUsersSizeTest() {
+    public void RevisionsUsersSizeTest() {
         List<String> revisionSize = JsonPath.read(jsonResponse, "$..user");
         assertEquals(4, revisionSize.size());
     }

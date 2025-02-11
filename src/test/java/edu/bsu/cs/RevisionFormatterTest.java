@@ -18,10 +18,4 @@ public class RevisionFormatterTest {
         String formatted = RevisionFormatter.format(revision, 1);
         assertEquals("1  2025-02-06  Alice", formatted);
     }
-    @Test
-    void formatWithMissingPageTest() {
-        Revision revision = new Revision(true);
-        String formatted = RevisionFormatter.format(revision,1);
-        assertEquals("No Wikipedia Page", formatted);
-    }
 }

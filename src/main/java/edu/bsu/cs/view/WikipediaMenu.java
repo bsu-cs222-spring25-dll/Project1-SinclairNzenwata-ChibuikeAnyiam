@@ -10,16 +10,9 @@ public class WikipediaMenu {
     public String getArticleName() {
         System.out.println("*".repeat(15) + " Welcome to Wiki search " + "*".repeat(15));
         System.out.print("\nPut in the article's name: ");
-        String articleName = scanner.nextLine().trim();
-        if (articleName.isEmpty()) {
-            displayError("No article name provided");
-        }
-        return articleName;
+        return scanner.nextLine().trim();
     }
     public void displayRevisions(List<Revision> revisions) {
-        if (revisions.get(0).getIsMissing()){
-            displayError("No Wikipedia page found");
-        }
         int counter = 1;
         for (Revision revision : revisions) {
             String formattedOutput = RevisionFormatter.format(revision, counter);
