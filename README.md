@@ -1,9 +1,10 @@
-# Wikipedia Revision Tracker  
+# Wikipedia Revision History Fetcher 
 
 ## Project Summary  
 This project retrieves and displays Wikipedia article revision history using Java.  
 It fetches revision data via the Wikipedia API, processes it using JSONPath,  
-and formats it for display while handling missing pages and redirections.  
+and formats it for display while handling missing pages and redirections. 
+It fetches the most recent revisions, including the timestamp and the user who made the edit.
 
 ## Authors  
 - **Chibuike Anyiam**  
@@ -14,8 +15,72 @@ and formats it for display while handling missing pages and redirections.
 - **Gradle** (Build System)  
 - **JSONPath** (For JSON Parsing)  
 - **JUnit 5** (For Testing)  
-- **SLF4J** (Logging)  
 - **HttpClient** (For API Calls)  
+
+## API Details
+
+This project utilizes the Wikipedia API to fetch the latest revisions of a given article.
+
+### **API Endpoint:**
+
+```
+https://en.wikipedia.org/w/api.php?action=query&format=json&prop=revisions&titles=<ARTICLE_NAME>&rvprop=timestamp|user&rvlimit=20&redirects
+```
+
+### **Parameters:**
+
+- `<ARTICLE_NAME>` – The title of the Wikipedia article to fetch revisions for.
+- `rvprop=timestamp|user` – Returns both the timestamp and user of each revision.
+- `rvlimit=20` – Limits the result to 20 revisions.
+- `redirects` – Automatically follows redirects.
+
+## Expected Output
+
+### **Example 1: Normal Article Revisions**
+
+```
+*************** Welcome to Wiki search ***************
+Put in the article's name: Iran
+1  2025-02-10T15:09:35Z  QwertyZ34
+2  2025-02-09T08:45:38Z  WikiCleanerBot
+3  2025-02-06T06:59:11Z  Worldbruce
+```
+
+### **Example 2: Redirected Article**
+
+```
+*************** Welcome to Wiki search ***************
+Put in the article's name: General
+Redirected to General officer
+1  22025-02-10T19:59:15Z Gaismagorm
+2  2025-02-10T19:57:39Z 184.105.252.226
+```
+
+### **Example 3: Missing Article**
+
+```
+*************** Welcome to Wiki search ***************
+Put in the article's name: SomeFakePage
+Error: No Wikipedia page found.
+```
+---
+
+## Build Instructions
+
+### **Prerequisites:**
+
+- Java 11 or higher
+- Gradle (for build system)
+
+### Steps to Build and Run  
+
+1. **Clone the Repository**  
+   ```sh
+   git clone https://github.com/bsu-cs222-spring25-dll/Project1-SinclairNzenwata-ChibuikeAnyiam.git
+2. Open up the project on an IDE like IntelliJ IDEA Community Edition
+3. Navigate to the WikipediaFetcher class and then run the project from that class.
+
+---
 
 ## Resources Used  
 - [Stack Overflow - Terminating a Java Program](https://stackoverflow.com/questions/22452930/terminating-a-java-program)  
@@ -26,23 +91,9 @@ and formats it for display while handling missing pages and redirections.
 - [Oracle Docs - Java HttpClient](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpClient.html)  
 - [SLF4J Logging Documentation](https://www.slf4j.org/codes.html#noProviders)  
 - [JSONPath Testing Tool](https://jsonpath.com/)  
-- [JSONPath GitHub Repository](https://github.com/json-path/JsonPath)  
-
----
-
-## **Project Structure**
-This project follows the **MVC (Model-View-Controller) architecture** for better separation of concerns:  
-
----
-
-### Steps to Build and Run  
+- [JSONPath GitHub Repository](https://github.com/json-path/JsonPath) 
 
 
-1. **Clone the Repository**  
-   ```sh
-   git clone <repository-url>
-2. Open up the project on an IDE like IntelliJ IDEA Community Edition
-3. Navigate to the WikipediaFetcher class and then run the project from that class.   is this readMe comprehensive with the instructions given in the document i attached
 
 
 
