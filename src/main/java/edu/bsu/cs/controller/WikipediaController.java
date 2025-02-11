@@ -20,12 +20,18 @@ public class WikipediaController {
 
     public void fetchAndDisplayRevisions() {
         String article = menu.getArticleName();
+        if (article.isEmpty()) {
+            menu.displayError("No article name provided");
+        }
         try {
             String jsonData = apiService.fetchWikipediaData(article);
             List<Revision> revisions = service.getRevisions(jsonData);
+            if (revisions.get(0).getIsMissing()){
+                menu.displayError("No Wikipedia page found");
+            }
             menu.displayRevisions(revisions);
         } catch (IOException | InterruptedException e) {
-            menu.displayError("Failed to retrieve revisions." + e.getMessage());
+            menu.displayError("Failed to retrieve revisions. Try turning on your wifi or mobile data " + "\nError Message: " +e.getMessage());
         }
     }
 }
