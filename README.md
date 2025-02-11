@@ -82,6 +82,23 @@ Error: No Wikipedia page found.
 
 ---
 
+## Testing
+### Run Unit Tests
+To execute JUnit tests: go inside IntelliJ, go to the test folder → Right-click on the which test class you want to run → and then click on Run (class name)Test.
+
+---
+
+## Error Handling
+| Scenario                  | Message                                 |
+|---------------------------|-----------------------------------------|
+| No Internet Connection     | Error: Unable to connect to Wikipedia API. |
+| Invalid Wikipedia Page     | Error: Page does not exist              |
+| API Error (HTTP 500, 404, etc.) | Error: Wikipedia API returned status 500 |
+| Empty Input    | Error: No article name provided.  |
+
+
+---
+
 ## Resources Used  
 - [Stack Overflow - Terminating a Java Program](https://stackoverflow.com/questions/22452930/terminating-a-java-program)  
 - [W3Schools - Java Error Handling](https://www.w3schools.com/java/java_ref_errors.asp)  
