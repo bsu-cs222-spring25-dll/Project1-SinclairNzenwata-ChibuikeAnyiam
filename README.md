@@ -98,7 +98,10 @@ To execute JUnit tests: go inside IntelliJ, go to the test folder → Right-clic
 | Empty Input    | Error: No article name provided.  |
 
 ### Suppressed Errors
-
+This project uses java.net.http.HttpClient and SLF4J is used by default for logging. To avoid unwanted logging errors related to missing SLF4J bindings, we use the slf4j-nop (No Operation) implementation by adding the code below to our **build.gradle.kts** file
+```sh
+implementation("org.slf4j:slf4j-nop:2.0.9")
+```
 
 ---
 
