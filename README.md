@@ -109,6 +109,8 @@ To execute JUnit tests: go inside IntelliJ, go to the test folder → Right-clic
 - [SLF4J Logging Documentation](https://www.slf4j.org/codes.html#noProviders)  
 - [JSONPath Testing Tool](https://jsonpath.com/)  
 - [JSONPath GitHub Repository](https://github.com/json-path/JsonPath) 
+- [How to Write a JavaFX Screen Without FXML/Scene Builder](https://pragmatic-coding.hashnode.dev/how-to-write-a-javafx-screen-without-fxmlscene-builder)
+- [JavaFX Dialogs - Official Guide](https://code.makery.ch/blog/javafx-dialogs-official/)
 
 
 
