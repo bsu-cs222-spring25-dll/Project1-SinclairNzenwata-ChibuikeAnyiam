@@ -72,13 +72,28 @@ Error: No Wikipedia page found.
 - Java 11 or higher
 - Gradle (for build system)
 
-### Steps to Build and Run  
+### Steps to Build and Run
 
 1. **Clone the Repository**  
    ```sh
    git clone https://github.com/bsu-cs222-spring25-dll/Project1-SinclairNzenwata-ChibuikeAnyiam.git
 2. Open up the project on an IDE like IntelliJ IDEA Community Edition
-3. Navigate to the WikipediaFetcher class and then run the project from that class.
+
+## Running the Application
+
+This project has two main entry points: **GUI Mode** and **Console Mode**.
+
+### **Running the Console Application**
+To run the application in **console mode**, use:
+1. Navigate to the WikipediaFetcher class and then run the project from that class.
+2. This will prompt you to enter a Wikipedia article name and display the revision history in the terminal.
+
+### **Running the GUI Application**
+To launch the **Graphical User Interface (GUI)** version, use:
+1. Click on the gradle icon in the top right corner of intelliJ.
+2. Click on **tasks** and finally click on **application**
+3. You will one file called **run** click on that.
+4. This will open a JavaFX window where you can enter an article name and view revisions in a list.
 
 ---
 
