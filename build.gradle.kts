@@ -1,5 +1,7 @@
 plugins {
     id("java")
+    id("application")
+    id("org.openjfx.javafxplugin") version "0.1.0"
 }
 
 group = "org.example"
@@ -16,6 +18,14 @@ dependencies {
     implementation("com.jayway.jsonpath:json-path:2.9.0")
     // Added to ignore the slf4j-nop errors.
     implementation("org.slf4j:slf4j-nop:2.0.9")
+}
+
+javafx {
+    version = "22"
+    modules("javafx.controls", "javafx.fxml")
+}
+application {
+    mainClass.set("edu.bsu.cs.view.GUI.WikipediaGUI")
 }
 
 tasks.test {
