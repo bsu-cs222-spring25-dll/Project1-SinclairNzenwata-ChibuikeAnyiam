@@ -9,7 +9,7 @@ import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
 
 public class WikipediaApiService {
-    private static final String BASE_URL = "https://en.wikipedia.org/w/api.php?action=query&format=json&prop=revisions&titles=%s&rvprop=timestamp|user&rvlimit=20&redirects";
+    private static final String BASE_URL = "https://en.wikipedia.org/w/api.php?action=query&format=json&prop=revisions&titles=%s&rvprop=timestamp|user&rvlimit=21&redirects";
     private static final String USER_AGENT = "Revision Reporter/0.1 (sinclair.nzenwata@bsu.edu)";
 
     public String fetchWikipediaData(String article) throws IOException, InterruptedException {

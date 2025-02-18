@@ -22,9 +22,6 @@ public class WikipediaGUI extends Application {
     private final ListView<String> listView = new ListView<>();
     private Button searchButton;
     private WikipediaController wikipediaController;
-
-
-
     @Override
     public void start(Stage stage) {
         WikipediaApiService apiService = new WikipediaApiService();
@@ -87,6 +84,8 @@ public class WikipediaGUI extends Application {
         alert.showAndWait();
         searchButton.setDisable(false);
     }
+
+//    public void display
 
     public void disableSearchButton(boolean disable) {
         searchButton.setDisable(disable);
