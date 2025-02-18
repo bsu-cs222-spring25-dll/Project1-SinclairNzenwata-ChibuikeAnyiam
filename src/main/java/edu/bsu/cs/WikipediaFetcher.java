@@ -19,7 +19,7 @@ public class WikipediaFetcher {
             Application.launch(WikipediaGUI.class, args);
         } else {
             WikipediaCLI wikipediaCLI = new WikipediaCLI();
-            WikipediaController controller = new WikipediaController(service, wikipediaCLI, apiService);
+            WikipediaController controller = new WikipediaController(service, wikipediaCLI, apiService, null);
             controller.fetchAndDisplayRevisions();
         }
 
