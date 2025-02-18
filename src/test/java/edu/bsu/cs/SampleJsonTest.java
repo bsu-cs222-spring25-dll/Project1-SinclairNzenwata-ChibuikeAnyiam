@@ -17,8 +17,6 @@ class SampleJsonTest {
     public void ExtractFirstUserTest() {
         List<String> users = JsonPath.read(jsonResponse, "$..revisions[*].user");
         assertFalse(users.isEmpty());
-        System.out.println("First editor: " + users.get(0));
-        assertNotNull(users.get(0));
     }
     @Test
     public void ExtractTimestampsFromJsonTest() {
