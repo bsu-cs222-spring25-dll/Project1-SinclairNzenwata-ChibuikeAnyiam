@@ -1,11 +1,11 @@
-package edu.bsu.cs.view;
+package edu.bsu.cs.view.CLI;
 
 import edu.bsu.cs.model.Revision;
 import edu.bsu.cs.utils.RevisionFormatter;
 import java.util.List;
 import java.util.Scanner;
 
-public class WikipediaMenu {
+public class WikipediaCLI {
     private final Scanner scanner = new Scanner(System.in);
     public String getArticleName() {
         System.out.println("*".repeat(15) + " Welcome to Wiki search " + "*".repeat(15));

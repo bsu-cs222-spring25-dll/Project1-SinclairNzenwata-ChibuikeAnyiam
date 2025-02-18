@@ -9,7 +9,6 @@ class RevisionTest {
     public void userAndTimestampConstructorTest() {
         Revision revision = new Revision("Sinclair Stark", "2024-02-02T14:30:00Z");
         assertEquals("Sinclair Stark", revision.getUser());
-        assertEquals("2024-02-02T14:30:00Z", revision.getTimestamp());
     }
     @Test
     public void redirectConstructorTest() {

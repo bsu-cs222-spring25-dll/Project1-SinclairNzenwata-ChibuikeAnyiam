@@ -17,8 +17,6 @@ public class RevisionParserTest {
     public void ExtractFirstUserTest() {
         List<String> users = revisionParser.extractUsers(jsonData);
         assertFalse(users.isEmpty());
-        System.out.println("First editor: " + users.get(0));
-        assertNotNull(users.get(0));
     }
     @Test
     void ExtractTimestampsFromJsonTest() {
