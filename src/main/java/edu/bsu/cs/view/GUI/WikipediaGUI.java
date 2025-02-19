@@ -57,8 +57,11 @@ public class WikipediaGUI extends Application implements WikipediaView {
         stage.setScene(scene);
         stage.setTitle("Wiki Search");
         stage.show();
-
-        searchButton.setOnAction(e -> wikipediaController.fetchAndDisplayRevisions());
+        searchButton.setOnAction(e -> {
+            disableSearch(true);
+            wikipediaController.fetchAndDisplayRevisions();
+            disableSearch(false);
+        });
     }
     @Override
     public void displayRevisions(List<Revision> revisions) {
@@ -72,8 +75,6 @@ public class WikipediaGUI extends Application implements WikipediaView {
             listView.getItems().add(formattedOutput);
         }
     }
-
-
     @Override
     public String getArticleName() {
         return textField.getText();
@@ -88,9 +89,8 @@ public class WikipediaGUI extends Application implements WikipediaView {
         alert.showAndWait();
         searchButton.setDisable(false);
     }
-
     // this method disables the search input text field and submit button
-    public void disableSearch(boolean disable) {
+    private void disableSearch(boolean disable) {
         searchButton.setDisable(disable);
         textField.setDisable(disable);
     }

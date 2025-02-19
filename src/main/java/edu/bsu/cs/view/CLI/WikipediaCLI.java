@@ -15,6 +15,7 @@ public class WikipediaCLI implements WikipediaView {
         System.out.print("\nPut in the article's name: ");
         return scanner.nextLine().trim();
     }
+
     @Override
     public void displayRevisions(List<Revision> revisions) {
         int counter = 1;
