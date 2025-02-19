@@ -8,9 +8,9 @@ import static org.junit.jupiter.api.Assertions.*;
 public class RevisionFormatterTest {
     @Test
     void formatWithRedirectTest() {
-        Revision revision = new Revision("http://example.com");
+        Revision revision = new Revision("Sinclair");
         String formatted = RevisionFormatter.format(revision, 1);
-        assertEquals("Redirected to: http://example.com", formatted);
+        assertEquals("Redirected to: Sinclair", formatted);
     }
     @Test
     void formatWithUserAndTimestampTest() {
