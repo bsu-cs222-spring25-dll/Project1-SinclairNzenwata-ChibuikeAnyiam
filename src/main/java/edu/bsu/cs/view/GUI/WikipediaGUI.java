@@ -22,18 +22,14 @@ public class WikipediaGUI extends Application implements WikipediaView {
     private TextField textField;
     private final ListView<String> listView = new ListView<>();
     private Button searchButton;
-    private final WikipediaController wikipediaController;
-
-    public WikipediaGUI(WikipediaController controller) {
-        this.wikipediaController = controller;
-    }
+    private WikipediaController wikipediaController;
     @Override
     public void start(Stage stage) {
-//        WikipediaApiService apiService = new WikipediaApiService();
-//        RevisionParser parser = new RevisionParser();
-//        RevisionBuilder builder = new RevisionBuilder();
-//        RevisionService service = new RevisionService(parser, builder);
-//        wikipediaController = new WikipediaController(service, null, apiService, this);
+        WikipediaApiService apiService = new WikipediaApiService();
+        RevisionParser parser = new RevisionParser();
+        RevisionBuilder builder = new RevisionBuilder();
+        RevisionService service = new RevisionService(parser, builder);
+        wikipediaController = new WikipediaController(service, apiService, this);
 
         Label titleLabel = new Label("Welcome to Wiki Search");
         titleLabel.setAlignment(Pos.CENTER);
