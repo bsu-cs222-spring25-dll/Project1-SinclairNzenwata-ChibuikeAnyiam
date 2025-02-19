@@ -7,6 +7,7 @@ import edu.bsu.cs.utils.RevisionBuilder;
 import edu.bsu.cs.utils.RevisionParser;
 import edu.bsu.cs.view.CLI.WikipediaCLI;
 import edu.bsu.cs.view.GUI.WikipediaGUI;
+import edu.bsu.cs.view.WikipediaView;
 import javafx.application.Application;
 
 public class WikipediaFetcher {
@@ -15,13 +16,21 @@ public class WikipediaFetcher {
         RevisionParser parser = new RevisionParser();
         RevisionBuilder builder = new RevisionBuilder();
         RevisionService service = new RevisionService(parser, builder);
+
+        WikipediaView view;
+        WikipediaController controller;
+
+        // launches the GUI
         if (args.length > 0 && args[0].equals("--gui")) {
+            controller = new WikipediaController(service, apiService, null);
+            view = new WikipediaGUI(controller);
             Application.launch(WikipediaGUI.class, args);
         } else {
-            WikipediaCLI wikipediaCLI = new WikipediaCLI();
-            WikipediaController controller = new WikipediaController(service, wikipediaCLI, apiService, null);
-            controller.fetchAndDisplayRevisions();
+        // launches the CLI
+            view = new WikipediaCLI();
         }
+        controller = new WikipediaController(service, apiService, view);
+        controller.fetchAndDisplayRevisions();
 
     }
 }

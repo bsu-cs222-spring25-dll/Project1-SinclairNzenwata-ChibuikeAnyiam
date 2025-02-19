@@ -2,6 +2,7 @@ plugins {
     id("java")
     id("application")
     id("org.openjfx.javafxplugin") version "0.1.0"
+    kotlin("jvm")
 }
 
 group = "org.example"
@@ -18,6 +19,7 @@ dependencies {
     implementation("com.jayway.jsonpath:json-path:2.9.0")
     // Added to ignore the slf4j-nop errors.
     implementation("org.slf4j:slf4j-nop:2.0.9")
+    implementation(kotlin("stdlib-jdk8"))
 }
 
 javafx {
@@ -30,4 +32,7 @@ application {
 
 tasks.test {
     useJUnitPlatform()
+}
+kotlin {
+    jvmToolchain(20)
 }

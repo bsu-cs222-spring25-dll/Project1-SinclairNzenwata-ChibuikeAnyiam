@@ -14,6 +14,7 @@ public class WikipediaApiService {
 
     public String fetchWikipediaData(String article) throws IOException, InterruptedException {
         String encodedArticle = URLEncoder.encode(article, StandardCharsets.UTF_8);
+        // trying to replace the "|" in the url
         String url = String.format(BASE_URL, encodedArticle).replace("|", "%7C");
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(url))

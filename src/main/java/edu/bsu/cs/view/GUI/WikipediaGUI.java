@@ -7,6 +7,7 @@ import edu.bsu.cs.service.WikipediaApiService;
 import edu.bsu.cs.utils.RevisionBuilder;
 import edu.bsu.cs.utils.RevisionFormatter;
 import edu.bsu.cs.utils.RevisionParser;
+import edu.bsu.cs.view.WikipediaView;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -17,18 +18,22 @@ import javafx.stage.Stage;
 import java.util.List;
 import java.util.Objects;
 
-public class WikipediaGUI extends Application {
+public class WikipediaGUI extends Application implements WikipediaView {
     private TextField textField;
     private final ListView<String> listView = new ListView<>();
     private Button searchButton;
-    private WikipediaController wikipediaController;
+    private final WikipediaController wikipediaController;
+
+    public WikipediaGUI(WikipediaController controller) {
+        this.wikipediaController = controller;
+    }
     @Override
     public void start(Stage stage) {
-        WikipediaApiService apiService = new WikipediaApiService();
-        RevisionParser parser = new RevisionParser();
-        RevisionBuilder builder = new RevisionBuilder();
-        RevisionService service = new RevisionService(parser, builder);
-        wikipediaController = new WikipediaController(service, null, apiService, this);
+//        WikipediaApiService apiService = new WikipediaApiService();
+//        RevisionParser parser = new RevisionParser();
+//        RevisionBuilder builder = new RevisionBuilder();
+//        RevisionService service = new RevisionService(parser, builder);
+//        wikipediaController = new WikipediaController(service, null, apiService, this);
 
         Label titleLabel = new Label("Welcome to Wiki Search");
         titleLabel.setAlignment(Pos.CENTER);
@@ -59,8 +64,8 @@ public class WikipediaGUI extends Application {
 
         searchButton.setOnAction(e -> wikipediaController.fetchAndDisplayRevisions());
     }
-
-    public void displayGUIRevisions(List<Revision> revisions) {
+    @Override
+    public void displayRevisions(List<Revision> revisions) {
         listView.getItems().clear();
         int counter = 1;
         for (Revision revision : revisions) {
@@ -72,11 +77,14 @@ public class WikipediaGUI extends Application {
         }
     }
 
-    public String getGUIArticle() {
+
+    @Override
+    public String getArticleName() {
         return textField.getText();
     }
 
-    public void displayGUIError(String message) {
+    @Override
+    public void displayError(String message) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Error Message");
         alert.setHeaderText(null);
@@ -85,9 +93,8 @@ public class WikipediaGUI extends Application {
         searchButton.setDisable(false);
     }
 
-//    public void display
-
-    public void disableSearchButton(boolean disable) {
+    // this method disables the search input text field and submit button
+    public void disableSearch(boolean disable) {
         searchButton.setDisable(disable);
         textField.setDisable(disable);
     }
