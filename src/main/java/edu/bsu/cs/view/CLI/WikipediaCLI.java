@@ -3,7 +3,6 @@ package edu.bsu.cs.view.CLI;
 import edu.bsu.cs.model.Revision;
 import edu.bsu.cs.utils.RevisionFormatter;
 import edu.bsu.cs.view.WikipediaView;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 import java.util.Scanner;

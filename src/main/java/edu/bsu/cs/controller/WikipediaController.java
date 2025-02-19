@@ -9,7 +9,6 @@ import edu.bsu.cs.view.CLI.WikipediaCLI;
 import edu.bsu.cs.view.GUI.WikipediaGUI;
 import edu.bsu.cs.view.WikipediaView;
 import javafx.application.Application;
-
 import java.io.IOException;
 import java.util.List;
 
@@ -33,14 +32,11 @@ public class WikipediaController {
             Application.launch(WikipediaGUI.class, args);
             return;
         }
-
         // Default to CLI if no --gui flag is passed
         WikipediaView view = new WikipediaCLI();
-
         WikipediaController controller = new WikipediaController(service, apiService, view);
         controller.fetchAndDisplayRevisions();
     }
-
     public void fetchAndDisplayRevisions() {
         String article = view.getArticleName();
         if (article.isEmpty()) {
