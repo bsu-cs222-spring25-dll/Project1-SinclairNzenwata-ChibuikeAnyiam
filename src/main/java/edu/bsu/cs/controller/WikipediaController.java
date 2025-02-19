@@ -54,7 +54,7 @@ public class WikipediaController {
 
             view.displayRevisions(revisions);
         } catch (IOException | InterruptedException e) {
-            view.displayError("Failed to retrieve revisions: " + e.getMessage());
+            view.displayError("Failed to retrieve revisions, try turning on your Wifi ");
         }
     }
 }
